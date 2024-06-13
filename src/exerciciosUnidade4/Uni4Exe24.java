@@ -13,6 +13,103 @@ public class Uni4Exe24 {
 
  */
 
+        Scanner leia = new Scanner(System.in);
+
+        System.out.println("Informe o primero valor");
+        int num1 = leia.nextInt();
+
+        System.out.println("Informe o segundo valor");
+        int num2 = leia.nextInt();
+
+        System.out.println("Informe o terceiro valor");
+        int num3 = leia.nextInt();
+
+
+        System.out.println("informe a opção desejada:\na) escreva os 3 valores em ordem crescente\nb) escreva os 3 valores em ordem decrescente\nc) escreva os 3 valores de forma que o maior valor fique no meio");
+        char opcao = leia.next().charAt(0);
+
+        System.err.println(opcao);
+        int maior=0;
+        int medio=0;
+        int menor = 0;
+
+
+        /* 
+        maior = num1;
+        if(num2 > maior){
+            maior = num2;
+        }
+
+        if(num3> maior){
+            maior = num3;
+        }
+
+        menor = num1;
+        if(num2 < menor){
+            menor = num2;
+        }
+
+        if(num3 < menor){
+            menor = num3;
+        }
+
+        if(num1 != maior && num1 != menor){
+            medio = num1;
+        }else if(num2 != maior && num2 != menor){
+            medio = num2;
+        }else {
+            medio = num3;
+        }
+
+
+        System.out.println("o maior numero é: "+maior +"\no medio numero é: "+medio + "\no menor numero é "+menor);
+
+        */
+
+
+        int maiorNum = num1;
+        if(num2 > maiorNum){
+            maiorNum = num2;
+        }
+        
+        if(num3 > maiorNum){
+            maiorNum = num3;
+        }
+
+        int menorNumero = num1;
+        if(num2 < menorNumero){
+            menorNumero = num2;
+        }
+
+        if(num3 < menorNumero){
+            menorNumero = num3;
+        }
+
+        int medioNumero;
+        if(num1 != maiorNum && num1 != menorNumero){
+            medioNumero = num1;
+        }else if(num2 != maiorNum && num2 != menorNumero){
+            medioNumero = num2;
+        }else{
+            medioNumero = num3;
+        }
+
+
+        System.out.println("o maior numero é: "+maiorNum +"\no medio numero é: "+medioNumero + "\no menor numero é "+menorNumero);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
          Scanner ler = new Scanner(System.in);
         
         int valor1, valor2, valor3, n1 = 0, n2 = 0, n3 = 0;
@@ -67,6 +164,8 @@ public class Uni4Exe24 {
         }
         ler.close();
 
+
+ */
 
     }
 }
