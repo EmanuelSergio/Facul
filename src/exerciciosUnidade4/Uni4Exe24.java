@@ -29,10 +29,7 @@ public class Uni4Exe24 {
         char opcao = leia.next().charAt(0);
 
         System.err.println(opcao);
-        int maior=0;
-        int medio=0;
-        int menor = 0;
-
+       
 
         /* 
         maior = num1;
@@ -166,6 +163,8 @@ public class Uni4Exe24 {
 
 
  */
+
+        leia.close();
 
     }
 }
