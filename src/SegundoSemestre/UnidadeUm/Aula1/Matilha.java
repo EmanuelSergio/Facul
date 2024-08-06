@@ -35,6 +35,15 @@ public class Matilha {
         System.out.println("pedro lima tem a cor: "+ cachorro2.cor);
         System.out.println("cachorro 3 tem a cor: "+ cachorro3.cor);
 
+        cachorro3 = new Cachorro();
+
+        cachorro3.nome = "marco faria";
+        cachorro3.cor = "cinza preto";
+        cachorro3.raca = "buldoguesksksk";
+        cachorro3.peso = 20.0;
+
+        
+
 
     }
 
