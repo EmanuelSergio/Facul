@@ -4,7 +4,7 @@ public class ContaBancaria {
     
     private String numero;
     private String titular;
-    private Double saldo;
+    private double saldo;
 
     public String getNumero() {
         return numero;
@@ -22,17 +22,36 @@ public class ContaBancaria {
         return saldo;
     }
 
-    public void depositar(Double valor){
-        saldo = saldo + valor;
+    public void depositar(double valor){
+        if(valor <= 0){
+            System.out.println("Informe um valor valido");
+        }else{
+            saldo = saldo + valor;
+        }
     }
 
-    public void sacar(Double valor){
-        saldo = saldo - valor;
+    public void sacar(double valor){
+        if (valor > saldo) {
+            System.out.println("saldo insuficiente");
+        }else if(valor <= 0){
+            System.out.println("Informe um valor valido");
+        }else{
+            saldo = saldo - valor;
+        }
+       
+
     }
 
-    public void transferir(ContaBancaria conta, Double valor){
-        saldo = saldo - valor;
-        conta.depositar(valor);
+    public void transferir(ContaBancaria conta, double valor){
+        
+        if (valor > saldo) {
+            System.out.println("saldo insuficiente");
+        }else if(valor <= 0){
+            System.out.println("Informe um valor valido");
+        }else{
+            saldo = saldo - valor;
+            conta.depositar(valor);
+        }
     }
 
     
