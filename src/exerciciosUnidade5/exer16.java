@@ -15,12 +15,12 @@ public class exer16 {
 
         Scanner leia = new Scanner(System.in);
 
-        char genero;
-        double pesoMasculino, pesoFeminino, pesoOutro;
-        int qntPessoas;
+       // char genero;
+       // double pesoMasculino, pesoFeminino, pesoOutro;
+       // int qntPessoas;
 
         System.out.println("Informe a quantidade de pessoas:");
-        qntPessoas = leia.nextInt();
+        //qntPessoas = leia.nextInt();
 
         for (int i = 0; i < 3; i++) {
             
