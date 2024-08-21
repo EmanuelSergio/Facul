@@ -23,30 +23,47 @@ public class Funcionario {
         this.salario = salario;
     }
  
-    public double calcularIrpf(double salario){
+    public double calcularIrpf(){
     
-        double imposto=0;
+        double imposto = 0;
         double diferenca = 0;
-
-        if(salario >1903.98){
-            if(salario > 1903.98){
+        
+        if (salario > 1903.98) {
+            if (salario <= 2826.65) { 
                 diferenca = salario - 1903.98;
-                imposto = diferenca * (7.5/100);
-    
-            }else if(salario <= 3751.05){
-                diferenca = salario - 1903.98;
-                imposto += diferenca * (7.5/100);
-    
+                imposto = diferenca * (7.5/100.0);
+            } else if (salario <= 3751.05) { 
                 diferenca = 2826.65 - 1903.98;
-                imposto += diferenca * (15.0/100.0);            
-            }else if(salario <= 4664.68){
-
-
-            }else if (salario > 4664.69) {
+                imposto = diferenca * (7.5/100.0);
                 
+                diferenca = salario - 2826.65;
+                imposto += (diferenca * (15.0/100.0));
+            } else if (salario <= 4664.68) { 
+
+                diferenca = 2826.65 - 1903.98;
+                imposto = diferenca * (7.5/100.0);
+                
+                
+                diferenca = 3751.05 - 2826.65;
+                imposto += (diferenca * (15.0/100.0));
+                
+                
+                diferenca = salario - 3751.05;
+                imposto += (diferenca * (22.5/100.0));
+            } else { 
+                diferenca = 2826.65 - 1903.98;
+                imposto = diferenca * (7.5/100.0);
+                
+                diferenca = 3751.05 - 2826.65;
+                imposto += (diferenca * (15.0/100.0));
+                
+                diferenca = 4664.68 - 3751.05;
+                imposto += (diferenca * (22.5/100.0));
+                
+                diferenca = salario - 4664.68;
+                imposto += (diferenca * (27.5/100.0));
             }
         }
-
         
         return imposto;
     }
