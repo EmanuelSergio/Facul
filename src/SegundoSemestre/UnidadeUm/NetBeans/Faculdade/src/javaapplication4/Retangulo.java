@@ -17,7 +17,7 @@ public class Retangulo {
     /**
      Contrutor que ja cria o retangulo com os valores
      * @param int altura para setar a altura
-     * @param int comprimento para setar o comprimento
+     * @param int comprimento para setar o comprimentoo 
      */
     public Retangulo(int altura, int comprimento){
         this.altura = altura;
