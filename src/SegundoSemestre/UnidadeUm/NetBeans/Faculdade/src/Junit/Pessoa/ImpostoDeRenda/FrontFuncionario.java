@@ -4,6 +4,8 @@
  */
 package Junit.Pessoa.ImpostoDeRenda;
 
+import java.text.DecimalFormat;
+
 /**
  *
  * @author esgirardi
@@ -92,10 +94,10 @@ public class FrontFuncionario extends javax.swing.JFrame {
        
         Funcionario funcionario = new Funcionario("" ,Double.parseDouble(salario.getText()));
         
-        
+        DecimalFormat df = new DecimalFormat("R$ 0.00");
         
         saidaFaixa.setText("O sálario está na "+funcionario.identificarFaixaIrpf()+" faixa");
-        saidaImposto.setText("O imposto a ser pago é de R$"+funcionario.calcularIrpf());
+        saidaImposto.setText("O imposto a ser pago é de R$"+df.format(funcionario.calcularIrpf()));
     }//GEN-LAST:event_avaliarActionPerformed
 
     /**
