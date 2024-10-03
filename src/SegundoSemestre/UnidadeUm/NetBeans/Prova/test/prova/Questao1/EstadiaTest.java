@@ -46,4 +46,5 @@ public class EstadiaTest {
         Estadia estadia = new Estadia(Periodo.MEDIA_TEMPORADA, 3);
         assertTrue(estadia.precoPagar() == 450.00f);
     }
+    
 }

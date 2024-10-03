@@ -4,6 +4,7 @@
  */
 package prova.Questao2;
 
+import javax.swing.DefaultComboBoxModel;
 import prova.Questao1.Estadia;
 import prova.Questao1.Periodo;
 import prova.Questao1.Estadia;
@@ -14,7 +15,7 @@ import prova.Questao1.Estadia;
  */
 public class Front extends javax.swing.JFrame {
 
- 
+
     
     /**
      * Creates new form Front
@@ -40,6 +41,7 @@ public class Front extends javax.swing.JFrame {
         entradaPerido = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         alertas = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +70,9 @@ public class Front extends javax.swing.JFrame {
 
         jLabel3.setText("informe a temporada (alta, media ou baixa)");
 
+        jComboBox2.setModel(new DefaultComboBoxModel<Periodo>(Periodo.values())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,7 +92,8 @@ public class Front extends javax.swing.JFrame {
                         .addComponent(entradaDias, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(calcular)
                     .addComponent(jLabel3)
-                    .addComponent(entradaPerido, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(entradaPerido, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(126, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -109,7 +115,9 @@ public class Front extends javax.swing.JFrame {
                     .addComponent(saidaTotal))
                 .addGap(18, 18, 18)
                 .addComponent(alertas)
-                .addContainerGap(94, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -144,7 +152,7 @@ public class Front extends javax.swing.JFrame {
             estadia.setQuantidadeDias(Integer.parseInt(entradaDias.getText()));
             saidaTotal.setText("R$"+estadia.precoPagar());
         } catch (Exception e) {
-            
+    
             alertas.setText("erro:" + e.getMessage());
             
         }
@@ -199,6 +207,7 @@ public class Front extends javax.swing.JFrame {
     private javax.swing.JButton calcular;
     private javax.swing.JTextField entradaDias;
     private javax.swing.JTextField entradaPerido;
+    private javax.swing.JComboBox<Periodo> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

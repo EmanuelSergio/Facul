@@ -16,7 +16,7 @@ public class Estadia {
 
     private Periodo periodo;
     private int quantidadeDias;
-
+    
     /**
      *
      */
