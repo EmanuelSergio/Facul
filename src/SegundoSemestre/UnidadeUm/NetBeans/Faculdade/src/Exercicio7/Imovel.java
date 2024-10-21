@@ -66,13 +66,17 @@ public class Imovel {
         }else if(finalidade == Finalidade.COMERCIAL){
             if(area <= 100){
                 tot = 500.0;
-            }else if(area > 100 && area >= 400){
+            }else if(area > 100 && area <= 400){
                 tot = 1000.0;
             }else if(area > 400){
                 tot = area * 2.55;
             }
         }else if(finalidade == Finalidade.INDUSTRIAL){
-            
+            if(area <= 2000 ){
+                tot = 2000.0;
+            }else{
+                tot = area * 0.55;
+            }
         }
         
         return tot;

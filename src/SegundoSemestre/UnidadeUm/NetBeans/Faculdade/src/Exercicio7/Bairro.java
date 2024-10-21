@@ -12,6 +12,15 @@ public class Bairro {
     
     private String nome;
     private Double coeficienteIptu;
+
+    public Bairro() {
+    }
+
+    public Bairro(String nome, Double coeficienteIptu) {
+        this.nome = nome;
+        this.coeficienteIptu = coeficienteIptu;
+    }
+    
     
     
     
