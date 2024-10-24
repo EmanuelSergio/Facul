@@ -40,7 +40,7 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return  "Nome"+ getNome() +" Salario:" + calcularSalario();
+        return  "Nome: "+ getNome() +", Salario: $" + calcularSalario() +"\n";
     }
     
     

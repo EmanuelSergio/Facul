@@ -50,7 +50,26 @@ public class Teste {
         
         System.out.println(empresa.calcularCustosSalarios());
         
+        
+        System.out.println("Funcionarios");
         System.out.println(empresa.getFuncionarios().toString());
+        
+        
+        System.out.println("Vendedores");
+        for (Funcionario f : empresa.getFuncionarios()) {
+             if (f instanceof Vendedor) {
+                 System.out.println(f.toString());
+            }
+        }
+        
+        System.out.println("Programadores");
+        for (Funcionario f : empresa.getFuncionarios()) {
+             if (f instanceof Programador) {
+                 System.out.println(f.toString());
+            }
+        }
+        
+        
         
     }
     
