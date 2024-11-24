@@ -129,15 +129,15 @@ public class ExibirDadosTurma extends javax.swing.JFrame {
         taRelatorio.append("\n Professor: "+turma.getProfessor().getNome());
         taRelatorio.append("\n Titulação: "+turma.getProfessor().getTitulacao().toString());
         taRelatorio.append("\n ---------------------------------------------------");
-        taRelatorio.append("\n Total de alunos: "+turma.getAlunos().size());
-        for(Aluno alu : turma.getAlunos()){
-            taRelatorio.append("\n "+alu.getNome() + " "+ alu.getMatricula()+ " - Nota ENEM: "+alu.getNotaEnem());
+        //taRelatorio.append("\n Total de alunos: "+turma.getAlunos().size());
+      //  for(Aluno alu : turma.getAlunos()){
+        //    taRelatorio.append("\n "+alu.getNome() + " "+ alu.getMatricula()+ " - Nota ENEM: "+alu.getNotaEnem());
             
-        }
+      //  }
         
-        Aluno aluno = turma.obterAlunoMelhorNotaEnem();
-                
-        taRelatorio.append("\n Aluno(a) com melhor nota: "+aluno.getNome() + " - ("+aluno.getNotaEnem()+")");
+      ///  Aluno aluno = turma.obterAlunoMelhorNotaEnem();
+      //          
+       // taRelatorio.append("\n Aluno(a) com melhor nota: "+aluno.getNome() + " - ("+aluno.getNotaEnem()+")");
     }
 
 }
