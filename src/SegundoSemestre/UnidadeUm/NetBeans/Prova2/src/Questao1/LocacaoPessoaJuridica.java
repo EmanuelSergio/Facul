@@ -14,6 +14,8 @@ public class LocacaoPessoaJuridica extends Locacao {
  
     private ArrayList<Veiculo> veiculos = new ArrayList<>();
 
+    
+    
     public ArrayList<Veiculo> getVeiculos() {
         return veiculos;
     }
