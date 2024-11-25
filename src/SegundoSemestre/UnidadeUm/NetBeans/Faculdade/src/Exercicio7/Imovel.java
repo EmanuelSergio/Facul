@@ -4,6 +4,9 @@
  */
 package Exercicio7;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  *
  * @author emanu
@@ -38,6 +41,11 @@ public class Imovel {
     }
 
     public void setArea(int area) {
+       
+        if (area <= 0) {
+            throw new IllegalArgumentException("area nao pode ser negativa ou menor a zero");
+        }
+        
         this.area = area;
     }
 
@@ -59,6 +67,18 @@ public class Imovel {
     
     public Double calcularIptu(){
         
+        if(getBairro() == null){
+            throw new IllegalArgumentException("o bairro deve ser definido");
+        }
+        
+        if(getBairro().getCoeficienteIptu() <= 0){
+             throw new IllegalArgumentException("o coeficiente do bairro deve ser definido");
+        }
+        
+        if(getFinalidade() == null){
+            throw new IllegalArgumentException("A finalidade deve ser definida");
+        }
+        
         Double tot = 0.0;
         
         if(finalidade == Finalidade.RESIDENCIAL){
@@ -73,13 +93,16 @@ public class Imovel {
             }
         }else if(finalidade == Finalidade.INDUSTRIAL){
             if(area <= 2000 ){
-                tot = 2000.0;
+                tot = 1000.0;
             }else{
                 tot = area * 0.55;
             }
         }
         
-        return tot;
+        tot = tot * getBairro().getCoeficienteIptu();
+        BigDecimal bd = new BigDecimal(tot);
+        bd = bd.setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
     
     

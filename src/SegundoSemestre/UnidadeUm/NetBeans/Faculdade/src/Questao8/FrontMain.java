@@ -327,7 +327,11 @@ public class FrontMain extends javax.swing.JFrame {
         telaAluno.setVisible(true);
        
         /*Pegando o objeto criado na telaAluno do tipo AlunoUi*/
-        Aluno novoAluno = telaAluno.getAluno();
+        Aluno novoAluno;
+        novoAluno = telaAluno.getAluno();
+        
+        
+        
         /*Se o aluno estiver null então não foi criado um objeto aluno no AlunoUi*/
         if (novoAluno != null){
             turma.incluirAluno(novoAluno);

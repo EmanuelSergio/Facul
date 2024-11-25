@@ -20,6 +20,22 @@ public class Bairro {
         this.nome = nome;
         this.coeficienteIptu = coeficienteIptu;
     }
+ 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Double getCoeficienteIptu() {
+        return coeficienteIptu;
+    }
+
+    public void setCoeficienteIptu(Double coeficienteIptu) {
+        this.coeficienteIptu = coeficienteIptu;
+    }
     
     
     

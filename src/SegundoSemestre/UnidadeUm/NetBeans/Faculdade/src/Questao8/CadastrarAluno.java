@@ -169,15 +169,19 @@ public class CadastrarAluno extends javax.swing.JFrame {
 
     private void confirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmarActionPerformed
        
-        this.aluno = new Aluno();
+        aluno = new Aluno();
         
         //aluno = new Aluno((int) Float.parseFloat(numeroMatricula.getText()), nomeAluno.getText(), (double) Float.parseFloat(notaEnem.getText()));
         aluno.setNome(nomeAluno.getText());
         aluno.setMatricula(Integer.parseInt(numeroMatricula.getText()));
         aluno.setNotaEnem(Double.parseDouble(notaEnem.getText()));
         
+        System.out.println(aluno.getNome()); 
+        System.out.println(aluno.getNotaEnem());
+        
         setVisible(false);
         
+        getAluno();
     }//GEN-LAST:event_confirmarActionPerformed
 
     /**
@@ -215,9 +219,7 @@ public class CadastrarAluno extends javax.swing.JFrame {
         });
     }
     
-    public Aluno getAluno(){
-        return aluno;
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancelar;
@@ -230,4 +232,10 @@ public class CadastrarAluno extends javax.swing.JFrame {
     private javax.swing.JTextField notaEnem;
     private javax.swing.JTextField numeroMatricula;
     // End of variables declaration//GEN-END:variables
+
+
+    public Aluno getAluno(){
+        return this.aluno;
+    }
+    
 }

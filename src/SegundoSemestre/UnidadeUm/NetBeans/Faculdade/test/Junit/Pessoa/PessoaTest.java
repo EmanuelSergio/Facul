@@ -27,6 +27,7 @@ public class PessoaTest {
         pessoa.setPeso(100);
         pessoa.setAltura(2);
         double imc = pessoa.calcularImc();
+        
         assertEquals(25.0, imc, 0);
      
       
