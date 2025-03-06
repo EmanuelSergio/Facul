@@ -1,10 +1,10 @@
-package UnidadeUm;
+package UnidadeUm.Lista.Linear;
 
-public class TesteListaEstatica {
+public class TesteListaLinearEstatica {
     
     public static void main(String[] args) {
         
-        ListaEstatica lista = new ListaEstatica();
+        ListaLinearEstatica lista = new ListaLinearEstatica();
 
         lista.inserir(5);
         lista.inserir(10);
@@ -24,7 +24,7 @@ public class TesteListaEstatica {
         System.out.println(lista.toString());
 
 
-        lista = new ListaEstatica();
+        lista = new ListaLinearEstatica();
 
         lista.inserir(1);
         lista.inserir(2);

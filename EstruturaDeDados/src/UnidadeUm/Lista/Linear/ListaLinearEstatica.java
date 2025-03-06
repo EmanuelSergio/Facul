@@ -1,6 +1,6 @@
-package UnidadeUm;
+package UnidadeUm.Lista.Linear;
 
-public class ListaEstatica {
+public class ListaLinearEstatica {
 
     
     private int[] info;
@@ -11,7 +11,7 @@ public class ListaEstatica {
      vazia;
      */
 
-    public ListaEstatica(){
+    public ListaLinearEstatica(){
         this.tamanho = 0;
         info = new int[10];
     }
