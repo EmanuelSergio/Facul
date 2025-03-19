@@ -1,6 +1,6 @@
 package UnidadeUm.Lista.Encadeada;
 
-public class ListaEncadeada <T>{
+public class ListaEncadeada <T> {
     
     private NoLista<T> primeiro;
 
@@ -63,6 +63,38 @@ public class ListaEncadeada <T>{
         
     }
 
-    
+    public int obterComprimento(){
+        NoLista<T> p = primeiro;
+        int cont = 0;
+        while(p != null){
+            cont++;
+            p = p.getProximo();
+        }
+        return cont;
+    }
 
+    public NoLista<T> obterNo(int index){
+        if (index < 0 || index >= obterComprimento()) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + obterComprimento());
+        }
+        int posicao = 0;
+        NoLista<T> p = primeiro;
+        while(p != null && posicao != index){
+            p = p.getProximo();
+            posicao++;
+        }
+        return p;
+    }
+
+    @Override
+    public String toString() {
+        String toString = "";
+        NoLista<T> p = primeiro;
+
+        while(p != null){
+            toString += p.getInfo() + ",\n";
+            p = p.getProximo();
+        }
+        return toString;
+    }
 }
