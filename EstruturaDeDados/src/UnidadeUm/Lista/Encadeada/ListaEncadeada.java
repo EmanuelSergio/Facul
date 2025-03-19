@@ -20,10 +20,7 @@ public class ListaEncadeada <T> {
     }
 
     public boolean estaVazia(){
-        if(primeiro == null){
-            return true;
-        }
-        return false;
+        return primeiro == null;
     } 
 
     public NoLista<T> buscar(T valor){
@@ -96,5 +93,15 @@ public class ListaEncadeada <T> {
             p = p.getProximo();
         }
         return toString;
+    }
+
+    public ListaEncadeada<T> criarInvertida(){
+        ListaEncadeada<T> invertida = new ListaEncadeada<>();
+        NoLista<T> p = primeiro;
+        while(p != null){
+            invertida.inserir(p.getInfo());
+            p = p.getProximo();
+        }
+        return invertida;
     }
 }
