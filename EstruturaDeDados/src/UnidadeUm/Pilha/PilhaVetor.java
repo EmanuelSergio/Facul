@@ -51,7 +51,27 @@ public class PilhaVetor <T> implements Pilha<T> {
         }
     }
 
-    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Pilha: ");
+        for (int i = 0; i < tamanho; i++) {
+            sb.append(info[i]);
+            if (i < tamanho - 1) {
+                sb.append(", ");
+            }
+        }
+        return sb.toString();
+    }
+
+    public void concatenar(PilhaVetor<T> pilha) {
+        if (this.tamanho + pilha.tamanho > this.limite) {
+            throw new RuntimeException("Pilha cheia");
+        }
+        for (int i = 0; i < pilha.tamanho; i++) {
+            this.push((T) pilha.info[i]);
+        }
+    }
      
 
 }
