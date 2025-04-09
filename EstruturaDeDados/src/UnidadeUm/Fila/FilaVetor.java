@@ -62,7 +62,44 @@ public class FilaVetor <T> implements Fila<T>{
         inicio = 0;
         tamanho = 0;
     }
+    public FilaVetor<T> criarFilaConcatenada(FilaVetor<T> f2) {
+        // Calculate the needed size for the new queue
+        int novoTamanho = this.tamanho + f2.tamanho;
+        
+        // Create the new queue with enough capacity
+        FilaVetor<T> f3 = new FilaVetor<>(novoTamanho);
+        
+        // Copy elements from the current queue (f1)
+        for (int i = 0; i < this.tamanho; i++) {
+            int posicao = (this.inicio + i) % this.limite;
+            f3.inserir((T) this.info[posicao]);
+        }
+        
+        // Copy elements from f2
+        for (int i = 0; i < f2.tamanho; i++) {
+            int posicao = (f2.inicio + i) % f2.limite;
+            f3.inserir((T) f2.info[posicao]);
+        }
+        
+        return f3;
+    }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Fila: ");
+        for (int i = 0; i < tamanho; i++) {
+            int posicao = (inicio + i) % limite;
+            sb.append(info[posicao]).append(" ");
+        }
+        return sb.toString();
+    }
+
+    public int getLimite() {
+        return limite;
+    }
+
+    
     
 
 }
