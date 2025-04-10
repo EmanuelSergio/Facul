@@ -1,3 +1,5 @@
+package UnidadeUm.Fila;
+
 
 public class FilaCheiaException extends RuntimeException {
     

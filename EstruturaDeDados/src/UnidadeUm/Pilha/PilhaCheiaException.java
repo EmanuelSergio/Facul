@@ -1,4 +1,6 @@
-public class PilhaCheiaException extends Exception{
+package UnidadeUm.Pilha;
+
+public class PilhaCheiaException extends RuntimeException{
 
     public PilhaCheiaException(String msg){
         super(msg);

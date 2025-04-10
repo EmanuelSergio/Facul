@@ -1,3 +1,5 @@
+package UnidadeUm.Pilha;
+
 public class PilhaVetor <T> implements Pilha<T> {
     private Object info[];
     private int limite;
@@ -12,7 +14,7 @@ public class PilhaVetor <T> implements Pilha<T> {
     @Override
     public void push(T info) {
         if(limite == tamanho){
-            throw new RuntimeException("Pilha cheia");
+            throw new PilhaCheiaException("Pilha cheia");
         }
         this.info[tamanho] = info;
         tamanho++;
@@ -21,7 +23,7 @@ public class PilhaVetor <T> implements Pilha<T> {
     @Override  
     public T pop() {
         if(estaVazia()){
-            throw new RuntimeException("Pilha vazia");
+            throw new PilhaVaziaException("Pilha vazia");
         }else{
             T elemento = (T) info[tamanho - 1];
             info[tamanho - 1] = null;
@@ -33,7 +35,7 @@ public class PilhaVetor <T> implements Pilha<T> {
     @Override
     public T peek() {
         if(estaVazia()){
-            throw new RuntimeException("Pilha vazia");
+            throw new PilhaVaziaException("Pilha vazia");
         }else{
             return (T) info[tamanho - 1];
         }
@@ -66,7 +68,7 @@ public class PilhaVetor <T> implements Pilha<T> {
 
     public void concatenar(PilhaVetor<T> pilha) {
         if (this.tamanho + pilha.tamanho > this.limite) {
-            throw new RuntimeException("Pilha cheia");
+            throw new PilhaCheiaException("Pilha cheia");
         }
         for (int i = 0; i < pilha.tamanho; i++) {
             this.push((T) pilha.info[i]);
