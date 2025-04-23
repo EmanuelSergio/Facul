@@ -32,6 +32,12 @@ public class PilhaVetor <T> implements Pilha<T> {
         }
     }
 
+    //renavam 01262126298
+    // placa RIA2D55
+    //FABRICACAO 2021, MODELO 2021
+    //FORD RANGER LTDCD4A32C ABERTA/CABINE DUPLA
+    //CHASSI 8AFAR23LXMJ226714
+
     @Override
     public T peek() {
         if(estaVazia()){
